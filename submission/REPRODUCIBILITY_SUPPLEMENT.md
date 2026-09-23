@@ -18,12 +18,12 @@ From a clean checkout:
 
 ```bash
 python3 -m pip install -r requirements.txt
-bash scripts/run_checks.sh
+bash scripts/run_checks.sh        # includes the Stage-11 independent hostile-referee checker
 bash scripts/build_manuscript.sh
 bash scripts/check_pdf.sh
 ```
 
-For the proof assistant, follow `formal/README.md` and the pinned toolchain files. The formal certificate records exactly what is and is not proved in Lean.
+For the proof assistant, use the pinned project under `formal/`: `formal/lean-toolchain`, `formal/lake-manifest.json`, `formal/lakefile.lean`, entry point `formal/RingbomShy.lean`, and theorem sources `formal/RingbomShy/Refund.lean` and `formal/RingbomShy/AxiomAudit.lean`. The exact previously certified environment and scope are recorded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md`; no nonexistent README is required.
 
 ## Independence structure
 

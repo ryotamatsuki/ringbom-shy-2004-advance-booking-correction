@@ -46,10 +46,14 @@ jobs:
           pdfinfo output/pdf/anonymous-manuscript.pdf
           test "$(pdfinfo output/pdf/anonymous-manuscript.pdf | awk '/^Pages:/ {print $2}')" -ge 1
           bash scripts/check_pdf.sh
-      - name: Upload submission PDF for visual QA
+      - name: Record submission PDF SHA-256
+        run: sha256sum output/pdf/anonymous-manuscript.pdf > output/pdf/anonymous-manuscript.sha256
+      - name: Upload commit-specific submission PDF for visual QA
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: submission-pdf
-          path: output/pdf/anonymous-manuscript.pdf
+          name: submission-pdf-${{ github.sha }}
+          path: |
+            output/pdf/anonymous-manuscript.pdf
+            output/pdf/anonymous-manuscript.sha256
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 30

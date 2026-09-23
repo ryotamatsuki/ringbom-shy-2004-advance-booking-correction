@@ -19,10 +19,11 @@
 ## Evidence run
 
 - `bash scripts/run_checks.sh`: PASS. This includes 800 seeded exact-rational random correspondence cases, 21 directed edge regressions, the Eq. (6) counterexample, Corollary 1 outside option, both Table 1 private-rate discrepancies, all other checked table values, rate/cash normalization, and non-normalized positive masses.
-- `bash scripts/build_manuscript.sh`: PASS; no unresolved citations or references. Output is 5 pages.
-- `bash scripts/check_pdf.sh`: PASS; PDF title and anonymous author metadata match the source, every listed font is embedded, page count is 5, and no encryption/forms/JavaScript are present.
+- `bash scripts/build_manuscript.sh`: local PASS; no unresolved citations or references. Output is 5 pages.
+- `bash scripts/check_pdf.sh`: local PASS; PDF title and anonymous author metadata match the source, every listed font is embedded, page count is 5, and no encryption/forms/JavaScript are present.
 - Visual render at 110 dpi: all five pages reviewed; no clipping, broken math, overlap, or orphaned section header remains.
 - A fresh local Lean invocation was unavailable because `lake` is not installed in this execution image. The pinned GitHub Actions run for the unchanged formal files, run 9 on commit `6562740410460f48418baabff5b44912346db35e`, built `RingbomShy` and passed placeholder and axiom checks. The existing formal certificate documents that run.
+- The first clean GitHub run passed exact checks but failed the manuscript job because it requested unused `enumitem.sty`, which is not in `texlive-latex-recommended`. The manuscript no longer loads that package; section placement uses a standard page break. A rerun is required before Stage 9 closure.
 
 ## Portability and source limits
 

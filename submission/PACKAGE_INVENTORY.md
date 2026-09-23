@@ -3,7 +3,7 @@
 ## Manuscript
 
 - `manuscript/main.tex` — journal-integrated anonymous initial-submission source.
-- CI-built anonymous manuscript PDF — 5 pages; QA SHA-256 `6dd03d476a6c110dcc86c0fdb38a853fb683a6a84a528bc158d27ec44527c401`.
+- Canonical submission PDF — generated from `manuscript/main.tex` by GitHub Actions and distributed only as a commit-specific workflow artifact (`submission-pdf-<commit SHA>`), together with its SHA-256 file. Generated PDFs are deliberately not tracked in Git, preventing a stale binary from diverging from the audited source.
 - `submission/SUBMISSION_METADATA.md` — title, abstract, keywords, JEL, and portal metadata placeholders.
 - Separate title page: **not included**, because Economics Bulletin generates it from metadata.
 - Separate appendix: **not required for the mathematical correction**.
@@ -14,12 +14,14 @@
 - `derivations/two_type_global_correspondence.md`
 - `derivations/uniform_rederivation.md`
 - `derivations/source_transcription.md`
-- `code/symbolic_checks.py`
+- `code/symbolic_derivation.py`
 - `code/independent_correspondence.py`
 - `code/stage11_hostile_referee.py`
 - exact counterexample / table-audit result files under `results/`
 - `docs/THEOREM_CERTIFICATES_STAGE04.md`
-- `formal/AdvanceBookingCorrection.lean`
+- `formal/RingbomShy.lean`
+- `formal/RingbomShy/Refund.lean`
+- `formal/RingbomShy/AxiomAudit.lean`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE.md`
 - pinned Lean / mathlib toolchain files under `formal/`
 - CI workflows under `.github/workflows/`

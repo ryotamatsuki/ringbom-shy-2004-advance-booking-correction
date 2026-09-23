@@ -4,6 +4,10 @@ set -euo pipefail
 pdf="output/pdf/anonymous-manuscript.pdf"
 tex="manuscript/main.tex"
 test -s "$pdf"
+if git ls-files --error-unmatch "$pdf" >/dev/null 2>&1; then
+  echo "Generated submission PDF must not be tracked in Git; use the commit-specific CI artifact" >&2
+  exit 1
+fi
 info="$(pdfinfo "$pdf")"
 printf '%s\n' "$info"
 

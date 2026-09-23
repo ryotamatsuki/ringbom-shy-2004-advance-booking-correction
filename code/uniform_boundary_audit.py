@@ -37,6 +37,15 @@ def run():
     r_star_inside = social_refund(beta, p_above_cost, c, s)
     assert p_above_cost > c and r_star_inside > r_bar_inside
 
+    # p>c is sufficient for the strict comparison on the audited interior domain,
+    # but it is not a pointwise necessary condition after leaving that domain.
+    beta2 = F(1)
+    p2 = c2 = F(1, 2)
+    s2 = F(1, 4)
+    r_bar_p_eq_c_salvage = private_refund(beta2, p2, c2, s2)
+    r_star_p_eq_c_salvage = social_refund(beta2, p2, c2, s2)
+    assert (r_bar_p_eq_c_salvage, r_star_p_eq_c_salvage) == (F(0), F(1, 2))
+
     # At beta=p, r=1, all types are indifferent; the cutoff formula is 0/0.
     assert all(utility(F(1), F(1), sig, F(1)) == 0 for sig in (F(0), F(1, 2), F(1)))
 
@@ -56,6 +65,7 @@ def run():
     return {
         "p_equals_c_s_zero": (r_bar, r_star, private_cutoff, social_cutoff),
         "p_strictly_above_c": (r_bar_inside, r_star_inside),
+        "p_equals_c_with_positive_salvage": (r_bar_p_eq_c_salvage, r_star_p_eq_c_salvage),
         "beta_equals_p_full_refund": "all types indifferent",
         "beta_minus_rp_zero": "direct utility is beta-p < 0 for every type",
         "p_above_beta": "no positive-show types participate",

@@ -6,7 +6,7 @@ Staffan Ringbom and Oz Shy (2004), “Advance Booking, Cancellations, and Partia
 
 ## Current stage
 
-**Stage 9 — Reproducibility setup; local gates pass and clean-checkout CI is pending.** Stage 8 theory is frozen. The anonymous LaTeX draft is built and in visual review.
+**Stage 10 — Paper construction complete; Stage 11 hostile-referee audit next.** Stage 8 theory is frozen; Stage 9 reproducibility checks and clean-checkout CI passed.
 
 ## Gate state
 
@@ -17,8 +17,10 @@ Staffan Ringbom and Oz Shy (2004), “Advance Booking, Cancellations, and Partia
 - Novelty review: PASS WITH QUALIFICATION; no public correction/equivalent result found in the bounded search; no absolute priority claim.
 - Formal verification: PASS for the theorem subset recorded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md`; full correspondence and uniform welfare calculus remain analytic with independent exact checks.
 - Stage 8 theory freeze: PASS, commit `fa3b516e7e48528515a08e60a69ea1974efcebed`.
+- Stage 9 clean-checkout reproduction: PASS on commit `6dd5bb88c5f19011d6dc6e3f1dd30b5c02347534`; Python and manuscript jobs both green.
 - LaTeX manuscript: source and five-page clean build succeed; visual PDF QA and local font/metadata checks pass; Stage 11 audit and journal formatting remain.
-- Stage 11 hostile-referee audit, Stage 12 journal universe, Stage 13 integration, Stage 14 requirements/preflight: NOT STARTED.
+- Stage 11 hostile-referee audit: IN PROGRESS.
+- Stage 12 journal universe, Stage 13 integration, Stage 14 requirements/preflight: NOT STARTED.
 - Submission and Stage 15: PROHIBITED / NOT PERFORMED.
 
 ## Current artifacts

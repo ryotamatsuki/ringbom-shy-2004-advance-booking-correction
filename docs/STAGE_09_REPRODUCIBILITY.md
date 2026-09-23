@@ -5,7 +5,7 @@
 - Input commit: `fa3b516e7e48528515a08e60a69ea1974efcebed` (Stage 8 theory freeze).
 - Output commit: to be recorded in `docs/STAGE_COMMIT_LEDGER.md` after CI evidence is available.
 - Branch: `research/stage-00-evidence-freeze`.
-- **Local verdict: PASS; remote clean-checkout CI pending.** Stage 9 closes after the pushed Python and manuscript jobs succeed.
+- **Verdict: PASS.** The repaired clean-checkout Python and manuscript jobs both succeeded.
 
 ## Repository changes
 
@@ -23,7 +23,8 @@
 - `bash scripts/check_pdf.sh`: local PASS; PDF title and anonymous author metadata match the source, every listed font is embedded, page count is 5, and no encryption/forms/JavaScript are present.
 - Visual render at 110 dpi: all five pages reviewed; no clipping, broken math, overlap, or orphaned section header remains.
 - A fresh local Lean invocation was unavailable because `lake` is not installed in this execution image. The pinned GitHub Actions run for the unchanged formal files, run 9 on commit `6562740410460f48418baabff5b44912346db35e`, built `RingbomShy` and passed placeholder and axiom checks. The existing formal certificate documents that run.
-- The first clean GitHub run passed exact checks but failed the manuscript job because it requested unused `enumitem.sty`, which is not in `texlive-latex-recommended`. The manuscript no longer loads that package; section placement uses a standard page break. A rerun is required before Stage 9 closure.
+- The first clean GitHub run passed exact checks but failed the manuscript job because it requested unused `enumitem.sty`, which is not in `texlive-latex-recommended`. The manuscript no longer loads that package; section placement uses a standard page break. The subsequent clean run passed both jobs.
+- The repaired run, workflow run #2 (`35811810059`) on commit `6dd5bb88c5f19011d6dc6e3f1dd30b5c02347534`, passed both `exact-checks` and `manuscript`: <https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35811810059>.
 
 ## Portability and source limits
 
@@ -31,4 +32,4 @@ The README gives clean-checkout Python, Lean, and manuscript commands. The LaTeX
 
 ## Next-stage contract
 
-Stage 10 will freeze the section-by-section manuscript against the frozen theorem ledger. Stage 11 must attack every material claim in the compiled draft before any journal selection. No submission or Stage 15 action is authorized.
+Stage 10 freezes the section-by-section manuscript against the frozen theorem ledger. Stage 11 must attack every material claim in the compiled draft before any journal selection. No submission or Stage 15 action is authorized.

@@ -10,6 +10,7 @@
 
 - Run 1, commit `ab01adf8c7001f6219d20e301b56da9c7cb95670`, failed during `lean-action` setup because `formal/lake-manifest.json` was absent. The Lean build, placeholder scan, and axiom audit were skipped; this is a reproducibility setup failure, not evidence for or against any theorem. The failure is retained rather than relabeled.
 - A lockfile is now being added with mathlib v4.34.0 and every transitive Git dependency pinned to the revisions in mathlib's own v4.34.0 manifest. A fresh CI run is required before closure.
+- Run 2, commit `6004017e7316a717ea7cbeda89311fa852fe2e3e`, reached `lake exe cache get` but rejected the manifest's hyphenated root package name as not a Lean `Name`. No mathlib cache or theorem build ran. The root package and manifest name are being changed together to `ringbomShyCorrection` before the next fresh run.
 
 ## Independence and evidence paths
 

@@ -30,3 +30,7 @@ Thumbs.db
 # Local copyrighted/private source material
 sources/private/
 sources/*.pdf
+
+# Generated submission artifacts (canonical copies are commit-specific CI artifacts)
+output/pdf/*.pdf
+output/pdf/*.sha256

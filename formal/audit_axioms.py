@@ -4,6 +4,18 @@ import subprocess
 import sys
 
 root = Path(__file__).resolve().parent
+build = subprocess.run(
+    ["lake", "build", "RingbomShy"],
+    cwd=root,
+    check=False,
+    capture_output=True,
+    text=True,
+)
+sys.stdout.write(build.stdout)
+sys.stderr.write(build.stderr)
+if build.returncode:
+    sys.exit(build.returncode)
+
 result = subprocess.run(
     ["lake", "env", "lean", "RingbomShy/AxiomAudit.lean"],
     cwd=root,

@@ -25,6 +25,7 @@ jobs:
         with:
           lake-package-directory: formal
           build: true
+          build-args: RingbomShy
           use-mathlib-cache: true
       - name: Reject proof placeholders and user axioms
         run: python3 formal/check_no_placeholders.py

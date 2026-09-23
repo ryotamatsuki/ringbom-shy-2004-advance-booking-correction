@@ -43,7 +43,7 @@ The high-price direction receives a direct analytic counterfamily in the manuscr
 - Directed exact near-(\beta) regression points were added to `code/corollary_counterexample.py`.
 - The boundary case ((\beta,p,c,s)=(1,1/2,1/2,1/4)), with (\bar r=0) and (r^*=1/2), was added to `code/uniform_boundary_audit.py`.
 - The Stage-11 independent checker is now part of `scripts/run_checks.sh`.
-- Final closure requires a fresh CI run, PDF checksum, page-by-page inspection, and Stage-14 record update.
+- Final closure completed: GitHub Actions run `35819784957` on canonical source commit `10c831d97569281c91a2a7686fb405c2ca83865a` succeeded; the commit-specific PDF artifact was checksum-verified and inspected page-by-page; canonical PDF SHA-256 is `5a78a8db1a57e72997dea1227a30557f29fa9301bab1987bf8481af53fe7ffe2`; Stage-14 records were updated accordingly.
 
 ## Do-not-change commitments
 

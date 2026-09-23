@@ -3,7 +3,8 @@
 ## Gate record
 
 - Canonical workflow: research-paper-workflow v2.4, commit `63f11a50a13d9328213498a5a6576d00b9bceef7`.
-- Input: Stage 12 primary-journal decision, commit `5d519f05ee05d09e923f48b43692668d9bbef502`.
+- Input commit: `5d519f05ee05d09e923f48b43692668d9bbef502` (Stage 12 primary-journal decision).
+- Output/closure commit: `3b5f42f39fc268c7c0a73197f988083961462298` (Stage 13 integration report; substantive manuscript preflight had already passed at `fdb98047fc60fea82553095521b66c1c011c4a27`).
 - Primary journal / route: *Economics Bulletin* / **Comment**, subject to authenticated portal confirmation.
 - Branch: `research/stage-00-evidence-freeze`.
 - **Verdict: PASS TO STAGE 14.**

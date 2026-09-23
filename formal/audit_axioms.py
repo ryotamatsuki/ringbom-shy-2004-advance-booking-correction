@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import subprocess
 import sys
 
@@ -17,6 +18,21 @@ if result.returncode:
 
 if "sorryAx" in result.stdout or "admitAx" in result.stdout:
     print("FAIL: placeholder axiom detected in theorem axiom report")
+    sys.exit(1)
+
+# The ordinary foundations are the only allowed assumptions in these theorem
+# certificates. Unexpected axioms, including Lean.ofReduceBool, fail the audit.
+allowed_axioms = {"propext", "Classical.choice", "Quot.sound"}
+reported_axioms = []
+for line in result.stdout.splitlines():
+    if "depends on axioms:" not in line:
+        continue
+    payload = line.split("depends on axioms:", 1)[1].strip()
+    names = payload.strip("[] ")
+    reported_axioms.extend(name.strip() for name in names.split(",") if name.strip())
+unexpected_axioms = sorted(set(reported_axioms) - allowed_axioms)
+if unexpected_axioms:
+    print(f"FAIL: nonstandard theorem axioms detected: {unexpected_axioms}")
     sys.exit(1)
 
 required = (

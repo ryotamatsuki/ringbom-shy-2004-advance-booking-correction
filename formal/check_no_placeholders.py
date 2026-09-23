@@ -3,7 +3,12 @@ import re
 import sys
 
 bad = []
-for path in Path(__file__).parent.rglob("*.lean"):
+formal_root = Path(__file__).resolve().parent
+for path in formal_root.rglob("*.lean"):
+    # Lake checks out pinned third-party packages under .lake/packages. Audit
+    # only repository-owned Lean sources, not dependency tests or examples.
+    if ".lake" in path.relative_to(formal_root).parts:
+        continue
     text = path.read_text(encoding="utf-8")
     if re.search(r"\b(sorry|admit)\b", text):
         bad.append(f"placeholder token in {path}")

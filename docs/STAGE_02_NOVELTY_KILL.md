@@ -7,6 +7,7 @@
 ## Input and scope
 
 - Input commit: `e067d78ce35f04ca6695fe31c597075b4dd7a2f5` (Stage 1 output).
+- Output commit: `66f30a1b861b825ea5904611c4c9f19fdf63f058` (`stage02: complete prior-disclosure and novelty kill search`).
 - Search date: 2026-09-23.
 - Search target: the corrected endpoint inequality, the weak-tie feasible global correspondence, and the source journal's comment/correction practice.
 - Full query and work-by-work classifications: `results/novelty_ledger_stage02.md`.

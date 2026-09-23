@@ -3,7 +3,9 @@
 ## Gate record
 
 - Canonical workflow: research-paper-workflow v2.4, commit `63f11a50a13d9328213498a5a6576d00b9bceef7`.
-- Input integration report: `docs/STAGE_13_FULL_PAPER_INTEGRATION.md`.
+- Input commit: `3b5f42f39fc268c7c0a73197f988083961462298` (Stage 13 integration closure).
+- Output/closure commit: `2f1c472a6946ea58a8553d9b5471246cee66d2cc` (Stage 14 package and conditional-pass closure).
+- Files added/updated at closure: `docs/STAGE_14_SUBMISSION_QA.md`, `submission/JOURNAL_REQUIREMENTS_LEDGER.md`, `submission/SUBMISSION_CHECKLIST.md`, `submission/PACKAGE_INVENTORY.md`, `submission/REPRODUCIBILITY_SUPPLEMENT.md`, `submission/AUTHENTICATED_PORTAL_PREFLIGHT.md`, and `PROJECT_STATUS.md`.
 - Primary target: *Economics Bulletin*, article type **Comment**.
 - Live compliance recheck: 2026-09-23.
 - Branch: `research/stage-00-evidence-freeze`.

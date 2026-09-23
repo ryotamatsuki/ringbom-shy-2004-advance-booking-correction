@@ -147,6 +147,7 @@ def uniformPrivateRoot (β p c s : ℚ) : ℚ :=
 
 theorem uniform_table1_cost_salvage_tenth_exact :
     uniformPrivateRoot 1 (1 / 2) (1 / 10) (1 / 10) = 8 / 13 ∧
+    uniformDerivativeBracket 1 (1 / 2) (1 / 10) (1 / 10) (8 / 13) = 0 ∧
     uniformDerivativeBracket 1 (1 / 2) (1 / 10) (1 / 10) (1 / 4) = 19 / 140 ∧
     uniformProfit 1 (1 / 2) (1 / 10) (1 / 10) (8 / 13) -
       uniformProfit 1 (1 / 2) (1 / 10) (1 / 10) (1 / 4) = 361 / 35280 := by
@@ -154,6 +155,7 @@ theorem uniform_table1_cost_salvage_tenth_exact :
 
 theorem uniform_table1_zero_cost_salvage_exact :
     uniformPrivateRoot 1 (1 / 2) 0 0 = 2 / 3 ∧
+    uniformDerivativeBracket 1 (1 / 2) 0 0 (2 / 3) = 0 ∧
     uniformDerivativeBracket 1 (1 / 2) 0 0 (357 / 1000) = 929 / 6572 ∧
     uniformProfit 1 (1 / 2) 0 0 (2 / 3) -
       uniformProfit 1 (1 / 2) 0 0 (357 / 1000) = 863041 / 86382368 := by

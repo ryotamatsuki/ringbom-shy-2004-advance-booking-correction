@@ -39,3 +39,8 @@ The uniform model will not be expanded into a new contribution. The note will sa
 ## Next-stage contract
 
 Stage 4 must derive the selected architecture from primitive payoffs and state the parameter domain for each theorem. Stage 4A must independently attack the full correspondence, not merely the factor in equation (6). Stage 6 will retest novelty against the final theorem statements.
+
+## Stage 3 scope re-review after Stage 4A table audit
+
+Stage 4A identified two additional incorrect numeric entries in the source's uniform Table 1. The architecture decision is **reaffirmed as B**, with a short, self-contained note correcting those two cells in the source-survival discussion. This finding arose from the required independent verification of the original table; it does not add a new mechanism or general theory. The manuscript remains a model-specific correction plus complete two-type correspondence. It will report that the uniform formulas and welfare conclusions survive on the audited domain, while identifying the two erroneous Table 1 entries and confirming Table 2. Architecture C remains rejected.
+

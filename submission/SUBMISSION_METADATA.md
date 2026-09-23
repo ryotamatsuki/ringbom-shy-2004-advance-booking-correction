@@ -12,7 +12,7 @@
 
 ## Abstract
 
-Ringbom and Shy (2004) compare two feasible refund rates in a two-type advance-booking model. Their printed condition for choosing the higher rate omits a factor $1/(1-\sigma_L)$ on the high-type profit loss. We derive the endpoint difference from primitive payoffs and give an exact parameter point at which the printed condition selects the lower-profit rate. We also characterize the global refund-choice correspondence on the full strategy set, including infeasible thresholds, participation ties, and the seller's zero-profit no-booking option. This qualification changes the reading of the paper's first corollary. The separate uniform-type welfare analysis survives on its active domain, although two private-refund entries in Table 1 do not match the paper's own formula.
+Ringbom and Shy (2004) compare two feasible refund rates in a two-type advance-booking model. Their printed condition for choosing the higher rate omits a factor $1/(1-\sigma_L)$ on the high-type profit loss. We derive the endpoint difference from primitive payoffs and give an exact parameter point at which the printed condition selects the lower-profit rate. We also characterize the global refund-choice correspondence on the full strategy set, including infeasible thresholds, participation ties, and an available zero-profit no-reservation interval. This shows that the paper's first corollary requires additional feasibility and profitability qualifications. The separate uniform-type welfare analysis survives on its active domain, although two private-refund entries in Table 1 do not match the paper's own formula.
 
 ## Author-facing fields
 

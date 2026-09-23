@@ -4,10 +4,10 @@
 
 - Input commit: `16ca2f760816df98b414db51d5bbd694c1b7ec37` (Stage 4 analytic construction).
 - Branch: `research/stage-00-evidence-freeze`.
-- Reopening commit: `c4e0552e90896a05317d5d74d180346d4ff5f8d6`; output commit is the commit containing this closure record on the research branch.
+- Reopening commit: `c4e0552e90896a05317d5d74d180346d4ff5f8d6`; strengthened-theorem commit: `6562740410460f48418baabff5b44912346db35e`.
 - The original Stage 4A formal gate passed on CI run `35807953310`; an exact pre-Stage-7 attack then found two VOR Table 1 refund entries that do not match the primitive uniform optimum. The central two-type theorem remains unchanged. The source discrepancy has now been checked by the direct exact evaluator and added to the formal rational theorem audit.
-- Run 7 passed the exact cell values and profit gaps. The Lean statements have since been strengthened to assert that the derivative bracket is exactly zero at each computed interior root; the current source tree therefore requires fresh CI run 8 before Stage 4A can close.
-- **Current verdict: OPEN — strengthened uniform FOC-root statements await fresh CI.** The two-type endpoint/correspondence certificate and all exact Python table checks pass. The remaining gate is to compile and audit the stronger Lean statements on the branch.
+- Run 7 passed the exact cell values and profit gaps; the strengthened statements also assert that the derivative bracket is exactly zero at each computed interior root.
+- **Verdict: PASS within the declared analytic and formal scope.** The two-type endpoint/correspondence certificate is unchanged; the uniform optimum derivation and all Table 1–2 entries have been adversarially checked, with two published Table 1 cells conclusively identified as incorrect. Lean proves the exact FOC roots, zero/positive derivative-bracket values, and primitive profit gaps for those two cells; uniqueness/globality follows from the separate analytic derivative proof.
 
 ## CI attempt log
 
@@ -18,8 +18,8 @@
 - Run 4, commit `092c43e55a4c1fb6dd5ec16b0e3474da8afc2993`, passed the scoped source scan but again ran a no-op `lake build` because no default target was declared. The axiom step then failed because no `RingbomShy` oleans existed. This run provides no proof verification. The Lake project now declares `RingbomShy` as its default target, CI passes that target explicitly, and the axiom script builds it before reading the certificate; a fifth fresh run is required.
 - Run 5, commit `baaa581533ae01c4e8e65eb9b3093ecb2f985c59`, reached the mathlib-cache step but failed because the scoped Lake dependency was named `mathlib4` while the pinned manifest and mathlib project identify the package as `mathlib`. The theorem target was not built, and placeholder/axiom checks were skipped. The dependency declaration is being changed to the official scoped package name `mathlib` before another fresh run.
 - Run 6, commit `7a02dc974be8ca1716d97af4184d34f144c185f8`, succeeded: [GitHub Actions run 35807953310](https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35807953310). Lean 4.34.0 built `RingbomShy.Refund`, `RingbomShy.AxiomAudit`, and the `RingbomShy` library (8,927 jobs); the source-only placeholder scan passed; and all nine theorem axiom reports contained only `propext`, `Classical.choice`, and `Quot.sound`. The mathlib cache omitted two project artifacts, which Lake compiled successfully during the build.
-- Run 7, commit `c4e0552e90896a05317d5d74d180346d4ff5f8d6`, succeeded: [GitHub Actions run 35809293844](https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35809293844). `RingbomShy.Refund`, `RingbomShy.AxiomAudit`, and `RingbomShy` built (8,927 jobs); the source-only placeholder scan passed; and all eleven theorem reports contained only `propext`, `Classical.choice`, and `Quot.sound`. The two new uniform Table 1 regression theorems appear in the axiom output.
-- Run 8 is required after strengthening the two uniform theorems to prove that the exact FOC bracket is zero at their computed roots, not only to compute the root helper and profit-gap arithmetic.
+- Run 7 (GitHub Actions workflow run #8), commit `c4e0552e90896a05317d5d74d180346d4ff5f8d6`, succeeded: [run 35809293844](https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35809293844). The root/gap target built and all eleven theorem reports contained only `propext`, `Classical.choice`, and `Quot.sound`.
+- Run 8 (GitHub Actions workflow run #9), commit `6562740410460f48418baabff5b44912346db35e`, succeeded: [run 35809641499](https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35809641499). `RingbomShy.Refund`, `RingbomShy.AxiomAudit`, and `RingbomShy` built (8,927 jobs); the source-only placeholder scan passed; and all eleven theorem reports contained only `propext`, `Classical.choice`, and `Quot.sound`. The two uniform theorems now explicitly prove the derivative bracket is zero at each exact FOC root.
 
 ## Independence and evidence paths
 
@@ -91,14 +91,13 @@ The full piecewise argmax proof and the general uniform calculus/welfare derivat
 - `python3 code/uniform_boundary_audit.py` — PASS.
 - `python3 code/uniform_table_audit_exact.py` — PASS; exactly two Table 1 private-rate mismatches, no social-rate or Table 2 mismatches.
 - GitHub Actions run `35809293844` — PASS for the prior eleven-theorem target on commit `c4e0552e90896a05317d5d74d180346d4ff5f8d6`.
-- Current strengthened theorem target — local source scan PASS; fresh pinned Lean CI pending.
+- Current strengthened theorem target — PASS in GitHub Actions workflow run #9; fresh pinned Lean build, source scan, and axiom audit.
 - `python3 formal/check_no_placeholders.py` — PASS (source scan only; not a Lean build).
 - Local Lean/Lake executables are unavailable; no local formal build is claimed.
 
-## Reopening and next-stage contract
+## Stage 4A closure and next-stage contract
 
-- **Closed for commit `c4e0552e90896a05317d5d74d180346d4ff5f8d6`:** pinned fresh CI build, source placeholder scan, and axiom audit passed for all eleven Lean targets; the full uniform table scan and direct profit check also passed.
-- **Open for current tree:** fresh CI must build/audit the two strengthened bracket-at-root theorem statements.
+- **Closed:** pinned fresh CI build, source placeholder scan, and axiom audit passed for all eleven Lean targets on commit `6562740410460f48418baabff5b44912346db35e`; the full uniform table scan and direct profit check also passed.
 - The source discrepancy is localized to two numerical entries in Table 1. Equation (14), the uniform optimum formulas, and the audited active-domain propositions remain unchanged.
 - The newly found discrepancy concerns two published numeric table entries, not the uniform optimum formula or the two-type correspondence. Keep the original theorem scopes unchanged unless another attack requires a repair.
-- Stage 6 must re-run novelty kill against the expanded correction claim set, including the two Table 1 cells, after run 8 passes.
+- Stage 6 must re-run novelty kill against the expanded correction claim set, including the two Table 1 cells.

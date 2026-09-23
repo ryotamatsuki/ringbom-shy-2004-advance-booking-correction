@@ -1,6 +1,6 @@
 # Theorem certificates — Stage 4 candidate set
 
-Certificates below state the exact quantifiers and separate analytic proof from computational cross-checking. The Lean project, once its CI build passes, certifies the algebraic identity, equality condition, exact regression point, and fixed-participation slope lemma; it does not replace the paper's full case-split proof.
+Certificates below state the exact quantifiers and separate analytic proof from computational cross-checking. The Lean project, once its CI build passes, certifies the endpoint identity, printed-factor difference, feasible endpoint comparison, equality condition, feasibility and exact values of the regression point, and fixed-participation slope lemma; it does not replace the paper's full case-split proof.
 
 ## TC-01 — Primitive payoff and endpoint identity
 
@@ -9,7 +9,7 @@ Certificates below state the exact quantifiers and separate analytic proof from 
 - **Claim:** `[α_H g_H(r_L)+α_L g_L(r_L)]−α_Hg_H(r_H)=α_L[σ_L(β−s)−c+s]−α_H(σ_H−σ_L)(β−p)/(1−σ_L)`.
 - **Proof:** Substitute the two thresholds into the state-contingent payoff. At a type's own threshold, `g_i(r_i)=σ_i(β−s)+s−c`; the high type's loss from moving from `r_H` to `r_L` is `(1−σ_H)p(r_L−r_H)=(σ_H−σ_L)(β−p)/(1−σ_L)`. Collect terms.
 - **Equality/necessary-sufficient:** On a feasible endpoint pair, the sign of the displayed difference is necessary and sufficient for `r_L` to weakly beat `r_H`; equality iff profits tie.
-- **Cross-check:** `code/symbolic_derivation.py`, `code/counterexample_exact.py`, `code/independent_correspondence.py`, and Lean `endpoint_gap_identity`/`endpoint_equality_iff`.
+- **Cross-check:** `code/symbolic_derivation.py`, `code/counterexample_exact.py`, `code/independent_correspondence.py`, and Lean `endpoint_gap_identity`, `printed_gap_factor_omission`, `feasible_endpoint_weak_choice_iff`, and `endpoint_equality_iff`.
 
 ## TC-02 — Global refund correspondence
 

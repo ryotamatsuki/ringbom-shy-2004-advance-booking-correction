@@ -3,6 +3,7 @@
 ## Input and verdict
 
 - Input commit: `54657cae4dc22eb0b617cded2db46900907f6761` (Stage 3 output).
+- Output commit: `16ca2f760816df98b414db51d5bbd694c1b7ec37` (`stage04: derive corrected correspondence from primitives`).
 - **Stage 4 analytic construction: PASS TO INDEPENDENT CERTIFICATION.** The central endpoint identity, full feasible argmax correspondence, and independent uniform-section derivation are stated from primitive utility and payoffs. This is not a formal verification or theory-freeze verdict.
 
 ## Frozen model statement for certification

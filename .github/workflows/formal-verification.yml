@@ -1,0 +1,32 @@
+name: Formal verification
+
+on:
+  push:
+    branches: [research/stage-00-evidence-freeze]
+    paths:
+      - "formal/**"
+      - ".github/workflows/formal-verification.yml"
+  pull_request:
+    paths:
+      - "formal/**"
+      - ".github/workflows/formal-verification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Build pinned Lean and mathlib project
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1.6.0
+        with:
+          lake-package-directory: formal
+          build: true
+          use-mathlib-cache: true
+      - name: Reject proof placeholders and user axioms
+        run: python3 formal/check_no_placeholders.py
+      - name: Print and check theorem axioms
+        run: python3 formal/audit_axioms.py

@@ -1,0 +1,11 @@
+import RingbomShy.Refund
+
+#print axioms RingbomShy.endpoint_gap_identity
+#print axioms RingbomShy.endpoint_weak_choice_iff
+#print axioms RingbomShy.endpoint_equality_iff
+#print axioms RingbomShy.printed_gap_factor_omission
+#print axioms RingbomShy.feasible_endpoint_weak_choice_iff
+#print axioms RingbomShy.corrected_gap_exact_regression
+#print axioms RingbomShy.exact_regression_feasible
+#print axioms RingbomShy.weighted_unit_profit_nonincreasing
+#print axioms RingbomShy.fixed_set_profit_nonincreasing

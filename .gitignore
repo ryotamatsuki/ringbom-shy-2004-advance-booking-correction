@@ -9,7 +9,7 @@ venv/
 # Jupyter
 .ipynb_checkpoints/
 
-# LaTeX
+# LaTeX build auxiliaries
 *.aux
 *.bbl
 *.blg
@@ -19,6 +19,7 @@ venv/
 *.out
 *.synctex.gz
 *.toc
+manuscript/build/
 
 # OS / editor
 .DS_Store

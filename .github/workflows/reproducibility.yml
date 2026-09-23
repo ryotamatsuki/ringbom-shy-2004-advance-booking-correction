@@ -1,0 +1,48 @@
+name: Reproducibility and manuscript build
+
+on:
+  push:
+    branches: [research/stage-00-evidence-freeze]
+    paths:
+      - "code/**"
+      - "formal/**"
+      - "manuscript/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/reproducibility.yml"
+  pull_request:
+    paths:
+      - "code/**"
+      - "formal/**"
+      - "manuscript/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/reproducibility.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install pinned Python dependencies
+        run: python3 -m pip install -r requirements.txt
+      - name: Run exact and symbolic checks
+        run: bash scripts/run_checks.sh
+
+  manuscript:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install LaTeX build tools
+        run: sudo apt-get update && sudo apt-get install -y latexmk texlive-latex-recommended poppler-utils
+      - name: Build and check manuscript
+        run: bash scripts/build_manuscript.sh
+      - name: Check generated PDF metadata and page count
+        run: |
+          pdfinfo output/pdf/anonymous-manuscript.pdf
+          test "$(pdfinfo output/pdf/anonymous-manuscript.pdf | awk '/^Pages:/ {print $2}')" -ge 1
+          bash scripts/check_pdf.sh

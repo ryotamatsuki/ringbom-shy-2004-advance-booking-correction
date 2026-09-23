@@ -1,13 +1,23 @@
 # Claim Boundary
 
-## Allowed publication-development claims
-- Re-derive the two-type refund candidate comparison and state a corrected Proposition 1.
-- Characterize the feasible candidate set after clipping `r∈[0,1]` and treating ties.
-- State precisely which later results survive unchanged.
+## Claims supported by the frozen evidence
 
-## Claims currently prohibited
-- Do not claim the paper’s entire welfare analysis is wrong.
-- Do not claim a new error in the uniform-distribution section without independent evidence.
+- The published two-type endpoint condition in Proposition 1 / Eq. (6) omits `1/(1−σ_L)`.
+- An exact parameter point within `β>p>c≥s≥0` has feasible thresholds and a strict reversal between the printed rule and primitive endpoint profits.
+- The corrected endpoint difference is necessary and sufficient for comparing those two feasible offers; it alone is not a global-optimality condition.
+- A complete correspondence follows from threshold partitioning, weak participation, and decreasing profit on each fixed nonempty participating set. It includes feasible clipping, ties, absent types, and any zero-profit no-reservation interval.
+- The first corollary needs feasibility and no-booking/profitability qualifications.
+- The uniform welfare results are separate and survive on their active domain. Two Table 1 private-refund values are numerical errors.
 
-## General boundary
-Until Stage 0 and Stage 4 pass, use language such as “the transferred audit indicates,” “candidate correction,” or “to be independently re-verified.” Do not use “proved,” “corrected theorem,” “published result is false,” or equivalent publication-facing language except when referring explicitly to the historical master-audit finding rather than this repository’s frozen result.
+## Claims not made
+
+- No absolute “first correction” or “first ever” claim.
+- No claim that the whole source paper or its uniform welfare analysis is invalid.
+- No general theorem for arbitrary screening, refund, or cancellation mechanisms.
+- No claim that endpoint comparison alone settles global choice.
+- No claim that boundary attainment is invariant to tie-breaking; weak participation is adopted as the source-consistent convention.
+- No Lean certification claim for the full argmax correspondence or welfare calculus.
+
+## Frozen paper architecture
+
+Short correction/comment. The manuscript may clarify source-domain conditions and report the Table 1 cells, but may not add a mechanism or broaden the theorem to improve journal fit.

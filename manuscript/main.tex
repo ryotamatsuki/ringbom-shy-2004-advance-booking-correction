@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[round,authoryear]{natbib}
+\usepackage{needspace}
+
+\hypersetup{hidelinks,pdfauthor={Anonymous},pdftitle={A Correction to the Two-Type Refund Result in Ringbom and Shy (2004)}}
+\setlist{nosep}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+
+\title{A Correction to the Two-Type Refund Result in Ringbom and Shy (2004)}
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Ringbom and Shy (2004) compare two feasible refund rates in a two-type advance-booking model. Their printed condition for choosing the higher rate omits a factor $1/(1-\sigma_L)$ on the high-type profit loss. We derive the endpoint difference from primitive payoffs and give an exact parameter point at which the printed condition selects the lower-profit rate. We also characterize the global refund-choice correspondence on the full strategy set, including infeasible thresholds, participation ties, and the seller's zero-profit no-booking option. This qualification changes the reading of the paper's first corollary. The separate uniform-type welfare analysis survives on its active domain, although two private-refund entries in Table 1 do not match the paper's own formula.
+\end{abstract}
+
+\noindent\textbf{Keywords:} advance booking; cancellation; partial refund; refund choice; correction\\
+\textbf{JEL codes:} D42; D82
+
+\section{Introduction}
+
+\citet{ringbomShy2004} study a seller who chooses a partial refund for advance reservations. In their two-type section, a high-show-probability type is just willing to reserve at $r_H$, while both types are willing at the larger rate $r_L$. Equation (5) correctly compares the corresponding endpoint profits. The condition printed in equation (6) and Proposition 1, however, understates the high-type loss from raising the refund: the term must be divided by $1-\sigma_L$ (Ringbom and Shy, 2004, Eq. (6), p. 3).
+
+The omission can reverse the endpoint ranking even when both rates lie strictly inside the feasible interval. At the exact parameter point reported below, the printed condition favors $r_L$, while primitive expected profits favor $r_H$. A second issue concerns global choice. The endpoint comparison does not establish that either rate is optimal when a threshold is outside $[0,1]$ or when both feasible endpoint profits are below the zero-profit option of taking no reservations. We give a complete correspondence for the source's strategy set and tie convention.
+
+The error is confined to the two-type comparison. We independently rederive the later uniform-type formulas and welfare results on their active domain. Those results survive, subject to their domain qualifications, but two numerical private-refund entries in Table 1 are incorrect. We report those entries so that the correction does not overstate what survives.
+
+\Needspace{8\baselineskip}
+\section{Two-type model}
+
+There are two consumer types, $H$ and $L$, with show probabilities $0<\sigma_L<\sigma_H<1$ and population shares $\alpha_H,\alpha_L>0$, where $\alpha_H+\alpha_L=1$. The seller chooses a refund rate $r\in[0,1]$. A consumer who shows receives value $\beta$ and pays price $p$; a consumer who cancels receives refund $rp$. The seller incurs service cost $c$ and obtains salvage value $s$ after cancellation. Consumers reserve when indifferent, as in the weak participation condition used in the source's continuum section.
+
+Type $i$'s expected utility is
+\begin{equation}
+ U_i(r)=\sigma_i(\beta-p)-(1-\sigma_i)(1-r)p
+       =\sigma_i(\beta-rp)-p(1-r).
+ \label{eq:utility}
+\end{equation}
+For $p>0$, this is strictly increasing in $r$. The indifference rate and expected seller profit per reservation are
+\begin{align}
+ r_i&=\frac{p-\beta\sigma_i}{p(1-\sigma_i)},
+ \label{eq:threshold}\\
+ g_i(r)&=\sigma_i(p-c)+(1-\sigma_i)((1-r)p+s-c)\\
+       &=p-c-(1-\sigma_i)(rp-s).
+ \label{eq:unitprofit}
+\end{align}
+At a type's indifference rate,
+\begin{equation}
+ g_i(r_i)=q_i:=\sigma_i(\beta-s)+s-c.
+ \label{eq:q}
+\end{equation}
+Moreover,
+\begin{equation}
+ r_L-r_H=\frac{(\beta-p)(\sigma_H-\sigma_L)}{p(1-\sigma_H)(1-\sigma_L)}.
+ \label{eq:thresholdgap}
+\end{equation}
+Thus the ordering $r_H<r_L$ requires $\beta>p$. Thresholds must still be checked against the strategy set; a raw negative threshold is not a feasible refund.
+
+\section{Correct endpoint comparison}
+
+Suppose $0\leq r_H<r_L\leq1$. Under weak participation, only type $H$ reserves at $r_H$, and both types reserve at $r_L$. Let $\Pi_H=n\alpha_Hg_H(r_H)$ and $\Pi_{HL}=n[\alpha_Hg_H(r_L)+\alpha_Lg_L(r_L)]$, where $n$ is the potential market size.
+
+\begin{proposition}[Corrected endpoint comparison]
+\label{prop:corrected}
+For feasible ordered thresholds $0\leq r_H<r_L\leq1$,
+\begin{equation}
+ \frac{\Pi_{HL}-\Pi_H}{n}
+ =\alpha_L[\sigma_L(\beta-s)-c+s]
+ -\frac{\alpha_H(\sigma_H-\sigma_L)(\beta-p)}{1-\sigma_L}.
+ \label{eq:correctgap}
+\end{equation}
+Consequently, $r_L$ weakly dominates $r_H$ among these two endpoint offers if and only if the right-hand side of \eqref{eq:correctgap} is nonnegative. Equality holds exactly when the two endpoint profits tie.
+\end{proposition}
+
+\begin{proof}
+At $r_L$, type $L$ earns $q_L$ by \eqref{eq:q}. Type $H$'s change in unit profit between the rates is $-(1-\sigma_H)p(r_L-r_H)$. Substituting \eqref{eq:thresholdgap} gives
+\[
+ (1-\sigma_H)p(r_L-r_H)
+ =\frac{(\sigma_H-\sigma_L)(\beta-p)}{1-\sigma_L}.
+\]
+Multiplying by the high-type mass and adding the low-type contribution yields \eqref{eq:correctgap}. The final equivalence follows from the sign of the exact profit difference.
+\end{proof}
+
+Equation (6) in the source omits $1/(1-\sigma_L)$. The difference is not a normalization: it is the high-type cost of moving from $r_H$ to $r_L$ after substituting the distance between the two indifference rates.
+
+\paragraph{Exact counterexample.}
+Set
+\[
+ (\beta,p,c,s)=\left(1,\frac35,\frac1{50},0\right),\quad
+ (\alpha_H,\alpha_L)=\left(\frac45,\frac15\right),\quad
+ (\sigma_H,\sigma_L)=\left(\frac{11}{20},\frac7{20}\right).
+\]
+These parameters satisfy $\beta>p>c\geq s\geq0$. The thresholds are $r_H=5/27$ and $r_L=25/39$, so both are feasible and strictly ordered. Direct primitive-payoff evaluation gives
+\[
+ \frac{\Pi_H}{n}=\frac{53}{125},\qquad
+ \frac{\Pi_{HL}}{n}=\frac{509}{1300},\qquad
+ \frac{\Pi_{HL}-\Pi_H}{n}=-\frac{211}{6500}.
+\]
+The printed condition has left side minus right side $1/500>0$ and therefore selects $r_L$, although $r_H$ earns more. All values are exact rationals; a separate checker computes expected seller cash flows directly from the two states.
+
+\section{Global refund choice and the first corollary}
+
+For any refund, define the primitive profit schedule
+\begin{equation}
+ \Pi(r)=n\sum_{i\in\{H,L\}}\alpha_i\mathbf{1}\{U_i(r)\geq0\}g_i(r),\qquad r\in[0,1].
+ \label{eq:profit}
+\end{equation}
+The indicator in \eqref{eq:profit} makes explicit the weak participation convention. On any interval with a fixed, nonempty participating set $A$,
+\begin{equation}
+ \Pi'(r)=-np\sum_{i\in A}\alpha_i(1-\sigma_i)<0.
+ \label{eq:slope}
+\end{equation}
+Thus profit falls strictly between threshold events. The expressions displayed in the source's equation (4) substitute threshold values; they are endpoint profits rather than the profit at every interior refund in each region.
+
+\begin{proposition}[Complete feasible refund correspondence]
+\label{prop:global}
+Let $\beta,p>0$, $c,s\geq0$, $0\leq\sigma_L<\sigma_H<1$, $\alpha_i\geq0$ with $\alpha_H+\alpha_L>0$, and use \eqref{eq:utility}--\eqref{eq:profit}. The weights need not be normalized; normalizing them only rescales profit. Let $J=\{i:\alpha_i>0\}$, $\rho_i=(p-\beta\sigma_i)/(p(1-\sigma_i))$, and
+\[
+ \mathcal C=\{0\}\cup\{\rho_i:i\in J,\ 0\leq\rho_i\leq1\},\quad
+ M=\max_{r\in\mathcal C}\Pi(r),\quad
+ \mathcal C^*=\{r\in\mathcal C:\Pi(r)=M\}.
+\]
+Define $\rho_0=\min_{i\in J}\rho_i$. When all positive-mass thresholds are positive and $M=0$, the argmax is
+\[
+ \mathcal C^*\cup\{r\in[0,1]:r<\rho_0\}.
+\]
+In every other case the argmax is exactly $\mathcal C^*$.
+\end{proposition}
+
+\begin{proof}
+Each utility is affine and strictly increasing in $r$, so a type joins at its raw threshold if that threshold lies in $[0,1]$, is already present at $r=0$ if its threshold is negative, and never joins if its threshold exceeds one. The candidate set includes zero and every in-domain participation threshold of a positive-mass type. Between consecutive candidates, either nobody participates and profit is zero, or a fixed positive mass participates and \eqref{eq:slope} makes profit strictly decreasing. Hence a positive-profit maximum can occur only at a candidate. If every positive-mass threshold is positive, the initial no-reservation set $\{r\in[0,1]:r<\rho_0\}$ has profit zero; it belongs to the argmax exactly when $M=0$. Weak acceptance evaluates threshold equalities at the threshold itself, including $r_i=0$ and $r_i=1$. In particular, at $\beta=p$ both thresholds equal one; for $\beta<p$, positive-show-probability types have thresholds above one. The argument uses primitive utility and does not divide by $\beta-rp$, so it also covers the boundary $\beta-rp=0$.
+\end{proof}
+
+When $0<r_H<r_L<1$ and both masses are positive, the candidate set is $\{0,r_H,r_L\}$. The following implication corrects the global reading of the source's Corollary 1.
+
+\begin{corollary}[Both types served]
+On $0<r_H<r_L<1$, the seller selects $r_L$ if and only if
+\begin{equation}
+ \Pi_{HL}\geq \max\{0,\Pi_H\}.
+ \label{eq:correctioncor}
+\end{equation}
+At equality, the optimal-refund correspondence includes both tied candidates (and, when both endpoints and no booking earn zero, the no-reservation interval).
+\end{corollary}
+
+The no-booking option can matter even near the paper's high-price region. For $\beta=1$, $p=999/1000$, $c=9/10$, $s=0$, equal masses, and $(\sigma_H,\sigma_L)=(1/2,1/10)$, the thresholds are $998/999$ and $8990/8991$. Exact profits are $-1/5$ at $r_H$ and $-2701/4500$ at $r_L$, while taking no reservations yields zero. Thus feasibility and endpoint ranking alone do not establish global service of both types.
+
+\section{What survives in the uniform model}
+
+The later continuous-type analysis is separate from the two-type endpoint comparison. For a uniform show probability $\sigma\sim U[0,1]$, on $\beta>p>c\geq s\geq0$ the reservation cutoff is
+\[
+ \widehat\sigma(r)=\frac{p(1-r)}{\beta-rp},\qquad
+ \frac{\pi(r)}n=\int_{\widehat\sigma(r)}^1[p-c-(1-\sigma)(rp-s)]\,d\sigma.
+\]
+Direct differentiation gives
+\[
+ \frac{\pi'(r)}n=\frac{p(\beta-p)}{(\beta-rp)^2}
+ \left[g_{\widehat\sigma(r)}(r)-\frac{\beta-p}{2}\right].
+\]
+The bracket is strictly decreasing in $r$, establishing a unique constrained private optimum. Solving for its root gives
+\[
+ r_{\mathrm{int}}=\frac{\beta[3p-2(c-s)]-2ps-\beta^2}{p(\beta-2c+p)},\qquad
+ \bar r=\max\{0,r_{\mathrm{int}}\}.
+\]
+Recomputing this formula and primitive profits gives $\bar r=8/13$ rather than the printed $0.250$ at $(\beta,p,c,s)=(1,1/2,1/10,1/10)$, and $\bar r=2/3$ rather than $0.357$ at $(1,1/2,0,0)$. Each printed rate has a positive derivative bracket, and the exact direct-profit gains at the corrected rates are $361/35280$ and $863041/86382368$ respectively.
+
+The planner's objective is
+\[
+ \frac{W(r)}n=\int_{\widehat\sigma(r)}^1[(\beta-s)\sigma-(c-s)]\,d\sigma,
+\]
+because refund transfers cancel between consumers and the seller. Its optimal cutoff is $(c-s)/(\beta-s)$, giving
+\[
+ r^*=1-\frac{(c-s)(\beta-p)}{p(\beta-c)}.
+\]
+On the stated strict domain the source's welfare comparisons and loss formulas follow independently of equation (6). Write $\widetilde p=\beta(\beta+2c-2s)/(3\beta-2s)$. The welfare loss is
+\[
+ \Delta W=\begin{cases}
+ \displaystyle\frac{n(\beta-p)^2}{8(\beta-s)},&p>\widetilde p,\\[6pt]
+ \displaystyle\frac{n[p(\beta-s)-\beta(c-s)]^2}{2\beta^2(\beta-s)},&p\leq\widetilde p.
+ \end{cases}
+\]
+In particular, $r^*>\bar r$ on the strict domain. The strict inequality needs $p>c$: at the excluded boundary $p=c,s=0$, both rates can equal zero. All remaining Table 1 values and all Table 2 welfare-loss entries reproduce at the published precision when evaluated at the primitive optimum. The uniform cutoff expression is not used at $\beta-rp=0$; boundary cases require direct utility rather than division by a zero denominator.
+
+\section{Conclusion}
+
+The correct two-type endpoint comparison adds the factor $1/(1-\sigma_L)$ to the high-type loss term in equation (6). Its omission can reverse the ranking of feasible refund endpoints. A complete global choice also evaluates threshold feasibility, the relevant tie rule, and the no-booking alternative. These corrections qualify Proposition 1 and Corollary 1, while the later uniform welfare analysis remains valid on its active domain. Two numerical private-refund entries in Table 1 require correction.
+
+\begin{thebibliography}{9}
+\bibitem[Ringbom and Shy(2004)]{ringbomShy2004}
+Ringbom, S. and O. Shy (2004).
+\newblock Advance booking, cancellations, and partial refunds.
+\newblock \emph{Economics Bulletin}, 13(1), 1--7.
+\newblock Publisher Version of Record: \url{https://www.accessecon.com/pubs/EB/2004/Volume13/EB-04M20001A.pdf}.
+\end{thebibliography}
+
+\end{document}

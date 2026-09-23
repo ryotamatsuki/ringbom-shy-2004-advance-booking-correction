@@ -61,3 +61,7 @@ The direct exact computation, symbolic derivation, and independent primitive enu
 ## Limitations and next-stage contract
 
 Stage 4 does not infer a global maximum from an FOC, numerical grid, or the endpoint inequality alone. Stage 4A must independently verify all candidate/tie branches, attack limits, and obtain a fresh Lean build. No Stage 8 freeze is allowed until the formal and scope gates close.
+
+### Reopened source-table audit
+
+A pre-Stage-7 verification of the uniform tables found two Table 1 private-rate cells that do not match equation (14) or direct integration of primitive profit: at `β=1,p=1/2,c=s=1/10`, the VOR prints `0.250` while the unique private optimum is `8/13`; at `β=1,p=1/2,c=s=0`, it prints `0.357` while the optimum is `2/3`. In each case the VOR's printed rate makes profit strictly lower than the exact optimum. All remaining Table 1 cells and Table 2 entries reproduce. Stage 4 is reopened to preserve this source discrepancy and verify the exact arithmetic independently; the analytic formulas and Proposition 2 are unchanged.

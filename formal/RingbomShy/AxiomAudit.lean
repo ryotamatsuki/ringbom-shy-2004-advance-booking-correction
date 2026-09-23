@@ -9,3 +9,5 @@ import RingbomShy.Refund
 #print axioms RingbomShy.exact_regression_feasible
 #print axioms RingbomShy.weighted_unit_profit_nonincreasing
 #print axioms RingbomShy.fixed_set_profit_nonincreasing
+#print axioms RingbomShy.uniform_table1_cost_salvage_tenth_exact
+#print axioms RingbomShy.uniform_table1_zero_cost_salvage_exact

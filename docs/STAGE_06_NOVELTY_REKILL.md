@@ -6,7 +6,7 @@
 - Search date: 2026-09-23.
 - Final candidate claims tested: (i) the corrected comparison of the two feasible participation-boundary profits; (ii) the complete model-specific global argmax correspondence on `r∈[0,1]`, including boundary thresholds, weak ties, no-booking, and the zero-profit outside option; and (iii) the impact separation between that two-type correction and the uniform-distribution results.
 - Search record: `results/novelty_ledger_stage06.md`.
-- **Verdict: PASS WITH QUALIFICATION TO STAGE 7.** Public search found no disclosed correction or mathematically equivalent later statement. Nearby refund/screening theory uses materially different timing, contract menus, capacity, competition, consumer learning, or signaling. The finite-candidate argument is standard one-dimensional piecewise-affine optimization and is not claimed as a general novel theorem.
+- **Core-claim result: PASS WITH QUALIFICATION, then REOPENED.** Public search found no disclosed correction or mathematically equivalent later statement for the two-type correction. After this search was committed, Stage 4A found two separate erroneous Table 1 entries in the VOR. The claim set now includes that numerical correction candidate; Stage 6 must be rerun after Stage 4A closes before any Stage 7 theory-freeze decision.
 
 ## Re-kill findings
 
@@ -26,6 +26,7 @@ The most defensible description remains: **a correction of the published two-typ
 - The 2003 predecessor's complete text/version chain remains unresolved; the public record cannot exclude an unpublished or unindexed prior disclosure.
 - Public citation databases provide discovery coverage, not a complete citation census.
 - Stage 7 must map every source claim to `INVALIDATED`, `CORRECTED`, `SURVIVES UNCHANGED`, `SURVIVES WITH DOMAIN QUALIFICATION`, `NOT AFFECTED`, or `UNRESOLVED`, with no blanket claim about the whole article.
+- The Stage 6 search result remains evidence for the Proposition 1 correction but is not a completed re-kill of the expanded claim set. Do not proceed to Stage 7 until that re-kill is recorded.
 
 ## Tests and evidence
 

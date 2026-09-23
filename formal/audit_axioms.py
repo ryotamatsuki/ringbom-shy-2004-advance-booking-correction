@@ -57,6 +57,8 @@ required = (
     "exact_regression_feasible",
     "weighted_unit_profit_nonincreasing",
     "fixed_set_profit_nonincreasing",
+    "uniform_table1_cost_salvage_tenth_exact",
+    "uniform_table1_zero_cost_salvage_exact",
 )
 missing = [name for name in required if name not in result.stdout]
 if missing:

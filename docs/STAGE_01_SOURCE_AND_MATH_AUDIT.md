@@ -22,7 +22,7 @@ One seller chooses a single `r∈[0,1]` after an exogenous `p`; potential consum
 | Eqs. (13)–(16), Proposition 2 | Correctly re-derived on `β>p>c≥s≥0`; the private optimum is globally unique by a strictly decreasing derivative bracket. The clipped point `p=p̃` is a kink. |
 | Eq. (17), Lemma 1, Proposition 3 | Correct on `β>p>c≥s≥0`. Refunds cancel as transfers; the planner chooses the cutoff `(c−s)/(β−s)`. The strict inequality `r*>r̄` fails as a strict statement at the excluded boundary `p=c,s=0`, where both can be zero. |
 | Eqs. (18)–(19), Proposition 4 | Correct after the domain qualification and branchwise interpretation. The stated high-price derivatives are local to `p>p̃`. |
-| Tables 1–2 | The selected table values agree with the rederived formulas; they are numerical illustrations, not independent proof. |
+| Tables 1–2 | Independent exact recheck finds two incorrect private-refund entries in Table 1 (both in the `p=0.5` row); the other Table 1 refund/social values and all Table 2 welfare-loss values reproduce. These are numerical illustrations, not independent proof. |
 
 ## Corrected endpoint identity and exact regression
 
@@ -48,7 +48,7 @@ On the strict screening domain `0<r_H<r_L<1` with positive masses, the corrected
 
 ## Continuum/uniform and welfare audit
 
-The uniform formula is independent of the two-type comparison. The cutoff, profit derivative, clipped unique refund, social cutoff, welfare-loss branches, and comparative-static signs were rederived from primitives on the strict domain `β>p>c≥s≥0`. At `p=c,s=0`, `r*=r̄=0`; this is a boundary limit, not an exception to hide inside the theorem. At `β=p` or `β−rp=0`, the cutoff quotient is undefined and is replaced by direct utility classification. The boundary correction and exact regression are in `docs/CERTIFICATION_REGRESSION_STAGE4A_P_EQUALS_C.md` and `code/uniform_boundary_audit.py`.
+The uniform formula is independent of the two-type comparison. The cutoff, profit derivative, clipped unique refund, social cutoff, welfare-loss branches, and comparative-static signs were rederived from primitives on the strict domain `β>p>c≥s≥0`. At `p=c,s=0`, `r*=r̄=0`; this is a boundary limit, not an exception to hide inside the theorem. At `β=p` or `β−rp=0`, the cutoff quotient is undefined and is replaced by direct utility classification. A new exact recheck found that Table 1 prints `r̄=0.250` for `(β,p,c,s)=(1,0.5,0.1,0.1)` and `r̄=0.357` for `(1,0.5,0,0)`, although the primitive optimum is `8/13` and `2/3`, respectively. The two published values match the `p=0.4` row and are not mere rounding. The direct profit gains at the corrected optima are `361/35280` and `863041/86382368`; all Table 2 welfare-loss entries match recomputation using the primitive optimum. See `code/uniform_table_audit_exact.py` and `results/uniform_table_audit_stage4a.md`.
 
 ## Residual question for Stage 2
 

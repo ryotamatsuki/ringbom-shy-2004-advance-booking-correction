@@ -131,4 +131,32 @@ theorem fixed_set_profit_nonincreasing
   have hL := weighted_unit_profit_nonincreasing p c s αL σL r₁ r₂ hp hαL hσL hr
   cases takeH <;> cases takeL <;> simp [fixedSetProfit] <;> linarith
 
+def uniformCutoff (β p r : ℚ) : ℚ := p * (1 - r) / (β - r * p)
+
+def uniformProfit (β p c s r : ℚ) : ℚ :=
+  let h := uniformCutoff β p r
+  let z := r * p - s
+  (p - c - z) * (1 - h) + z * (1 - h * h) / 2
+
+def uniformDerivativeBracket (β p c s r : ℚ) : ℚ :=
+  s - c + uniformCutoff β p r * (β - s) - (β - p) / 2
+
+def uniformPrivateRoot (β p c s : ℚ) : ℚ :=
+  let a := (β - p) / 2 + c - s
+  (p * (β - s) - a * β) / (p * ((β - s) - a))
+
+theorem uniform_table1_cost_salvage_tenth_exact :
+    uniformPrivateRoot 1 (1 / 2) (1 / 10) (1 / 10) = 8 / 13 ∧
+    uniformDerivativeBracket 1 (1 / 2) (1 / 10) (1 / 10) (1 / 4) = 19 / 140 ∧
+    uniformProfit 1 (1 / 2) (1 / 10) (1 / 10) (8 / 13) -
+      uniformProfit 1 (1 / 2) (1 / 10) (1 / 10) (1 / 4) = 361 / 35280 := by
+  norm_num [uniformPrivateRoot, uniformDerivativeBracket, uniformCutoff, uniformProfit]
+
+theorem uniform_table1_zero_cost_salvage_exact :
+    uniformPrivateRoot 1 (1 / 2) 0 0 = 2 / 3 ∧
+    uniformDerivativeBracket 1 (1 / 2) 0 0 (357 / 1000) = 929 / 6572 ∧
+    uniformProfit 1 (1 / 2) 0 0 (2 / 3) -
+      uniformProfit 1 (1 / 2) 0 0 (357 / 1000) = 863041 / 86382368 := by
+  norm_num [uniformPrivateRoot, uniformDerivativeBracket, uniformCutoff, uniformProfit]
+
 end RingbomShy

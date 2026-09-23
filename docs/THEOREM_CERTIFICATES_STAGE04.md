@@ -40,3 +40,11 @@ Certificates below state the exact quantifiers and separate analytic proof from 
 - **Claim:** The actual seller payoff depends on the current refund `r`; the printed equation (4) substitutes candidate boundary rates in the upper and middle branches. On each fixed nonempty participating set, seller profit falls strictly with `r`.
 - **Proof:** Differentiate primitive expected seller cash flow, giving `−np∑α_i(1−σ_i)`.
 - **Implication:** Candidate boundaries are enough only together with feasibility, tie, and no-booking treatment. Equation (4)'s displayed values do not describe the actual payoff at every interior refund in the stated region.
+
+## TC-06 — Uniform Table 1 numerical cells
+
+- **Quantifiers:** Exact rational instances on the active domain `β>p>c≥s≥0`, with `σ∼U[0,1]`.
+- **Claim:** For `(β,p,c,s)=(1,1/2,1/10,1/10)`, the private optimum from the uniform first-order condition is `8/13`; the VOR's Table 1 value `0.250` has positive derivative bracket `19/140` and lower primitive profit by `361/35280`. For `(1,1/2,0,0)`, the private optimum is `2/3`; the printed `0.357` is below it and has positive derivative bracket `929/6572` at exact rate `357/1000`; the primitive profit gain at the exact optimum is `863041/86382368`.
+- **Proof:** The exact checker computes the cutoff from primitive utility, integrates the state-contingent unit seller payoff directly over the uniform support, solves the marginal boundary condition `g_{σ̂}=(β−p)/2`, and checks the profit difference and derivative sign by rational arithmetic. On the active domain the derivative bracket decreases strictly in `r`, so its unique root is the global private optimum; for these two interior cases the root lies in `(0,1)`.
+- **Other table cells:** All remaining Table 1 private/social rates and every Table 2 welfare-loss entry reproduce at the displayed precision when recomputed from the primitive optimum. See `code/uniform_table_audit_exact.py` and `results/uniform_table_audit_stage4a.md`.
+- **Cross-check:** Exact rational primitive integration; independent symbolic uniform derivation in `code/symbolic_derivation.py`; source cells transcribed from the publisher PDF's printed Table 1.

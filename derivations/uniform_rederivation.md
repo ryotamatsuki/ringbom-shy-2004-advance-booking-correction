@@ -85,4 +85,4 @@ The first branch has `∂ΔW/∂c=0`, `∂ΔW/∂p=−n(β−p)/[4(β−s)]<0`, 
 - `s→0`: all displayed active-domain expressions are continuous.
 - Uniform support endpoints have measure zero. At the `β=p,r=1` tie, weak participation nevertheless applies to the entire continuum because utility is zero for every `σ`.
 
-These results reproduce source equations (7)–(19), Proposition 2, Lemma 1, Propositions 3–4, and the table calculations only on the qualified active domain. They do not depend on the two-type Eq. (6) comparison.
+These results reproduce source equations (7)–(19), Proposition 2, Lemma 1, Propositions 3–4, and Table 2 on the qualified active domain. Two Table 1 private-refund entries do not reproduce: for `β=1,p=1/2,c=s=1/10`, equation (14) and the primitive profit give `r̄=8/13`, not the printed `0.250`; for `β=1,p=1/2,c=s=0`, they give `r̄=2/3`, not the printed `0.357`. The exact direct-profit comparisons are recorded in `results/uniform_table_audit_stage4a.md`. These findings do not depend on the two-type Eq. (6) comparison.

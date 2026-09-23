@@ -4,8 +4,8 @@
 
 - Input commit: `16ca2f760816df98b414db51d5bbd694c1b7ec37` (Stage 4 analytic construction).
 - Branch: `research/stage-00-evidence-freeze`.
-- The independently written exact-rational evaluator and directed attacks pass. The pinned Lean target was actually built in GitHub Actions.
-- **Verdict: PASS within the stated formalization scope.** The exact endpoint algebra, weak choice/equality equivalences, printed-factor identity, rational regression, feasibility arithmetic, and fixed-participation monotonicity compile without proof placeholders or nonstandard axioms. The complete piecewise correspondence and uniform-distribution calculus remain certified by the separate analytic derivation and independent exact checks, not by Lean.
+- The original Stage 4A formal gate passed on CI run `35807953310`; after that closure, an exact pre-Stage-7 attack found two VOR Table 1 refund entries that do not match the primitive uniform optimum. The central two-type theorem remains unchanged, but Stage 4A has been **reopened** to certify the additional source discrepancy and extend the rational theorem audit.
+- **Current verdict: REOPENED — uniform Table 1 regression added; formal extension pending.** The original Lean pass remains valid for its listed theorems; no Stage 7 verdict may rely on it until the added exact result and adversarial scope are recorded and the updated CI passes.
 
 ## CI attempt log
 
@@ -16,6 +16,7 @@
 - Run 4, commit `092c43e55a4c1fb6dd5ec16b0e3474da8afc2993`, passed the scoped source scan but again ran a no-op `lake build` because no default target was declared. The axiom step then failed because no `RingbomShy` oleans existed. This run provides no proof verification. The Lake project now declares `RingbomShy` as its default target, CI passes that target explicitly, and the axiom script builds it before reading the certificate; a fifth fresh run is required.
 - Run 5, commit `baaa581533ae01c4e8e65eb9b3093ecb2f985c59`, reached the mathlib-cache step but failed because the scoped Lake dependency was named `mathlib4` while the pinned manifest and mathlib project identify the package as `mathlib`. The theorem target was not built, and placeholder/axiom checks were skipped. The dependency declaration is being changed to the official scoped package name `mathlib` before another fresh run.
 - Run 6, commit `7a02dc974be8ca1716d97af4184d34f144c185f8`, succeeded: [GitHub Actions run 35807953310](https://github.com/ryotamatsuki/ringbom-shy-2004-advance-booking-correction/actions/runs/35807953310). Lean 4.34.0 built `RingbomShy.Refund`, `RingbomShy.AxiomAudit`, and the `RingbomShy` library (8,927 jobs); the source-only placeholder scan passed; and all nine theorem axiom reports contained only `propext`, `Classical.choice`, and `Quot.sound`. The mathlib cache omitted two project artifacts, which Lake compiled successfully during the build.
+- Run 7 is required after adding the exact uniform Table 1 regression to the formal target and recording the direct primitive-profit audit.
 
 ## Independence and evidence paths
 
@@ -84,12 +85,14 @@ The full piecewise argmax proof and the separate uniform calculus/welfare deriva
 - `python3 code/independent_correspondence.py` — PASS (800 draws; 21 directed cases).
 - `python3 code/corollary_counterexample.py` — PASS.
 - `python3 code/uniform_boundary_audit.py` — PASS.
+- `python3 code/uniform_table_audit_exact.py` — PASS; exactly two Table 1 private-rate mismatches, no social-rate or Table 2 mismatches.
 - `python3 formal/check_no_placeholders.py` — PASS (source scan only; not a Lean build).
 - Local Lean/Lake executables are unavailable; no local formal build is claimed.
 
-## Stage 4A closure and next-stage contract
+## Reopening and next-stage contract
 
-- **Closed:** pinned fresh CI build, source placeholder scan, and axiom audit passed on the research branch.
+- **Still valid:** pinned fresh CI build, source placeholder scan, and axiom audit passed for the original nine Lean targets.
+- **Open:** add and compile exact proofs of both disputed Table 1 rational cells/profit gaps; record a fresh CI run and extend the source-versus-model impact audit.
 - No mathematical discrepancy remains in the exact regression or current analytic correspondence.
-- Reopen Stage 4 if an independent attack contradicts the analytic correspondence; this CI pass certifies only the named Lean theorems.
-- Stage 6 must re-run novelty kill against the final corrected endpoint theorem and exact global correspondence.
+- The newly found discrepancy concerns two published numeric table entries, not the uniform optimum formula or the two-type correspondence. Keep the original theorem scopes unchanged unless another attack requires a repair.
+- Stage 6 must re-run novelty kill once Stage 4A recloses and the candidate correction scope is frozen.

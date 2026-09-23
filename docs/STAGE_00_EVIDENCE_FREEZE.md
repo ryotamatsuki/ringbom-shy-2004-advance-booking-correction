@@ -18,6 +18,7 @@ Does the VOR's equation (6) correctly compare the two feasible endpoint profits 
 ## Frozen evidence
 
 - Production repository branch and starting head: `research/stage-00-evidence-freeze` at `b1c6f118ee4a76489ca10789a89e8b1e86be738f`.
+- Stage 0 output commit: `f936faa5865da528a300213f2c5c086415c795d0` (`stage00: freeze workflow mapping and evidence intake`).
 - Canonical workflow: v2.4 at `63f11a50a13d9328213498a5a6576d00b9bceef7`; scaffold crosswalk: `docs/WORKFLOW_V2_4_MAPPING.md`.
 - Master audit and code were fetched from the user's named branch and read as provenance only; the working copy never assumes their theorem is true.
 - Publisher VOR accessed 2026-09-23; 8 PDF pages; equation/proposition/table inventory recorded in `sources/source_manifest.md` and `derivations/source_transcription.md`.

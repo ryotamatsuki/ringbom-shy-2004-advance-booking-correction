@@ -5,6 +5,7 @@
 - Repository: `ryotamatsuki/ringbom-shy-2004-advance-booking-correction`
 - Work branch: `research/stage-00-evidence-freeze`
 - Starting branch head: `b1c6f118ee4a76489ca10789a89e8b1e86be738f`
+- Stage 0 output commit: `f936faa5865da528a300213f2c5c086415c795d0`
 - `main` was not modified.
 
 ## Canonical workflow

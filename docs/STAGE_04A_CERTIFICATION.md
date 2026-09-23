@@ -6,6 +6,11 @@
 - The independently written exact-rational evaluator and directed attacks pass. The formal project is prepared and its fresh GitHub Actions build is pending.
 - **Provisional verdict: ANALYTIC / EXACT-CHECK PASS; FORMAL GATE PENDING.** Stage 4A is not closed until the pinned Lean build, placeholder scan, and theorem axiom audit pass on the research branch.
 
+## CI attempt log
+
+- Run 1, commit `ab01adf8c7001f6219d20e301b56da9c7cb95670`, failed during `lean-action` setup because `formal/lake-manifest.json` was absent. The Lean build, placeholder scan, and axiom audit were skipped; this is a reproducibility setup failure, not evidence for or against any theorem. The failure is retained rather than relabeled.
+- A lockfile is now being added with mathlib v4.34.0 and every transitive Git dependency pinned to the revisions in mathlib's own v4.34.0 manifest. A fresh CI run is required before closure.
+
 ## Independence and evidence paths
 
 The counterexample was checked through separate representations:

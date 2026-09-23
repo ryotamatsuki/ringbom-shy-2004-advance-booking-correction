@@ -46,3 +46,10 @@ jobs:
           pdfinfo output/pdf/anonymous-manuscript.pdf
           test "$(pdfinfo output/pdf/anonymous-manuscript.pdf | awk '/^Pages:/ {print $2}')" -ge 1
           bash scripts/check_pdf.sh
+      - name: Upload submission PDF for visual QA
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: submission-pdf
+          path: output/pdf/anonymous-manuscript.pdf
+          if-no-files-found: error
+          retention-days: 7
